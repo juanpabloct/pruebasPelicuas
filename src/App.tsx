@@ -5,6 +5,7 @@ import { Header } from "./components/navbar/header";
 import { FlexCol } from "./components/tw-components";
 import { AnimacionCarga } from "./components/animacionCarga";
 import { Search } from "./components/search/search";
+import { Categories } from "./pages/categories";
 const Home = lazy(() => import("./pages/home"));
 const Movie = lazy(() => import("./pages/movie"));
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/movie/:id" element={<Movie />} />
+              <Route path="/category/:id/:name/" element={<Categories />} />
             </Routes>
           </Suspense>
         )}
