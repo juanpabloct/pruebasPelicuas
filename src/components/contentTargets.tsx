@@ -15,7 +15,7 @@ export const ContentTargets = ({
       <div className="flex w-10/12  flex-wrap container">
         {data.results.map((item) => (
           <div
-            className="w-1/6"
+            className="w-1/3 md:w-1/6"
             onClick={() => {
               setSearch && setSearch("");
             }}
