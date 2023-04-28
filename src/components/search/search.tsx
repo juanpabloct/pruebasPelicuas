@@ -16,12 +16,18 @@ export const Search = ({ filter, setSearch }: SearchProps) => {
   if (state.loading) {
     return <AnimacionCarga />;
   }
-  if (Array.isArray(data)) {
+  if (state.hasData) {
     return (
       <FlexRow className="justify-center items-center mt-4">
         <div className="flex w-10/12  flex-wrap container">
           {data.results.map((item) => (
-            <div className="w-1/6" onClick={() => setSearch("")}>
+            <div
+              className="w-1/6"
+              onClick={() => {
+                setSearch("");
+              }}
+              key={item.id}
+            >
               <Target pelicula={item} />
             </div>
           ))}
