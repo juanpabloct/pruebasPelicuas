@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { Category } from "../components/moviesCategories/category";
 import { FlexCol, FlexRow } from "../components/tw-components";
-import { useGetInfoCategory } from "../customHooks/getInfoCategory";
 
 export const Categories = () => {
   const { id, name } = useParams();

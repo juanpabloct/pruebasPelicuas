@@ -1,13 +1,9 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { FlexCol, FlexRow, Navbar } from "../tw-components";
+import { FlexRow, Navbar } from "../tw-components";
 import { Link } from "react-router-dom";
-import { StyleLink } from "./StyleLink";
 import { IconMenu } from "../iconMenu";
 import { Routes } from "./navegacion";
 import { MenuPhone } from "./menuPhone";
-import { useConnectApi } from "../../customHooks/connectApi";
-import { CategoriesMovies } from "../../types/categories";
-import { Search } from "../search/search";
 
 interface HeaderProps {
   setSearch: Dispatch<SetStateAction<string>>;
@@ -16,9 +12,6 @@ interface HeaderProps {
 export const Header = ({ setSearch, search }: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
   const [busqueda, setBusqueda] = useState("");
-  const { data } = useConnectApi<CategoriesMovies>({
-    recurso: "genre/movie/list",
-  });
   useEffect(() => {
     return () => {
       search !== busqueda && setBusqueda(search);

@@ -2,8 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 import { useConnectApi } from "../../customHooks/connectApi";
 import { StructureMovies } from "../../types/StructureMovies";
 import { AnimacionCarga } from "../animacionCarga";
-import { FlexCol, FlexRow } from "../tw-components";
-import { Target } from "../target/target";
+import { FlexCol } from "../tw-components";
 import { ContentTargets } from "../contentTargets";
 interface SearchProps {
   filter: string;
