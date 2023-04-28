@@ -1,12 +1,17 @@
 import { useParams } from "react-router-dom";
 import { Category } from "../components/moviesCategories/category";
-import { FlexRow } from "../components/tw-components";
+import { FlexCol, FlexRow } from "../components/tw-components";
 import { useGetInfoCategory } from "../customHooks/getInfoCategory";
 
 export const Categories = () => {
   const { id, name } = useParams();
   if (id && name) {
-    return <Category id={id?.toString()} name={name} />;
+    return (
+      <FlexCol>
+        <h1 className="md:text-3xl xl text-center font-bold py-1">{name}</h1>
+        <Category id={id?.toString()} type="targets" name={name} />;
+      </FlexCol>
+    );
   }
   return (
     <FlexRow>
