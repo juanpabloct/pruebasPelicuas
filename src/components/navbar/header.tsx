@@ -24,15 +24,14 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
       search !== busqueda && setBusqueda(search);
     };
   }, [search]);
+  const clean = () => {
+    setSearch("");
+    setBusqueda("");
+  };
   return (
     <Navbar>
       <FlexRow className="text-[#ffdb9d] text-xl md:text-2xl xl:2xl w-1/5 items-center">
-        <span
-          onClick={() => {
-            setSearch("");
-            setBusqueda("");
-          }}
-        >
+        <span onClick={clean}>
           <Link to={"/"}>Cuvana</Link>
         </span>
       </FlexRow>
@@ -52,7 +51,7 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
             key === "Enter" && setSearch(busqueda);
           }}
         />
-        <button onClick={() => setSearch("")}>Limpiar</button>
+        <button onClick={clean}>Limpiar</button>
       </FlexRow>
       <IconMenu action={() => setShowMenu((current) => !current)} />
       <MenuPhone showMenu={showMenu} />
