@@ -4,6 +4,7 @@ import { StructureMovies } from "../../types/StructureMovies";
 import { AnimacionCarga } from "../animacionCarga";
 import { FlexCol, FlexRow } from "../tw-components";
 import { Target } from "../target/target";
+import { ContentTargets } from "../contentTargets";
 interface SearchProps {
   filter: string;
   setSearch: Dispatch<SetStateAction<string>>;
@@ -16,23 +17,14 @@ export const Search = ({ filter, setSearch }: SearchProps) => {
   if (state.loading) {
     return <AnimacionCarga />;
   }
-  if (state.hasData) {
+  if (state.hasData && data.results.length > 0) {
     return (
-      <FlexRow className="justify-center items-center mt-4">
-        <div className="flex w-10/12  flex-wrap container">
-          {data.results.map((item) => (
-            <div
-              className="w-1/6"
-              onClick={() => {
-                setSearch("");
-              }}
-              key={item.id}
-            >
-              <Target pelicula={item} />
-            </div>
-          ))}
-        </div>
-      </FlexRow>
+      <FlexCol>
+        <h1 className="text-center text-xl md:text-3xl font-semibold py-5">
+          Busqueda para: {filter}
+        </h1>
+        <ContentTargets data={data} setSearch={setSearch} />;
+      </FlexCol>
     );
   }
   return (
