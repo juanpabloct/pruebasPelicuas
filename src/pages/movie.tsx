@@ -6,8 +6,7 @@ import { Image } from "../components/target/image";
 import { Results } from "../components/results";
 const Movie = () => {
   const { id } = useParams();
-  console.log(id);
-  const { data, state } = useConnectApi<EstructureMovie>({
+  const { data } = useConnectApi<EstructureMovie>({
     recurso: `movie/${id}`,
   });
   const {
