@@ -25,6 +25,14 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/movie/:id" element={<Movie />} />
               <Route path="/category/:id/:name/" element={<Categories />} />
+              <Route
+                path="*"
+                element={
+                  <h1 className="text-4xl text-center font-bold">
+                    Pagina No Encontrada
+                  </h1>
+                }
+              />
             </Routes>
           </Suspense>
         )}
