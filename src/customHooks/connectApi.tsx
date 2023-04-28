@@ -22,8 +22,12 @@ export const useConnectApi = <T,>({ url, recurso }: useConnectApiProps) => {
   const getData = useCallback(async () => {
     setState((current) => ({ ...current, loading: true }));
     try {
-      const peticion = await await axios.get(urlComplete);
-      setState((current) => ({ ...current, hasData: true, loading: false }));
+      const peticion = await axios.get(urlComplete);
+      setState((current) => ({
+        ...current,
+        hasData: Object.keys(peticion.data).length > 0,
+        loading: false,
+      }));
 
       setData(peticion.data);
     } catch (error) {
