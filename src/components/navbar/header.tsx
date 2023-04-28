@@ -21,6 +21,7 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
     setSearch("");
     setBusqueda("");
   };
+  const filterEqual = search.length > 0 && search === busqueda;
   return (
     <Navbar>
       <FlexRow className="text-[#ffdb9d] text-xl md:text-2xl xl:2xl w-1/5 items-center">
@@ -44,7 +45,9 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
             key === "Enter" && setSearch(busqueda);
           }}
         />
-        <button onClick={clean}>Limpiar</button>
+        <button onClick={() => (filterEqual ? clean() : setSearch(busqueda))}>
+          {filterEqual ? "Limpiar" : "Buscar"}
+        </button>
       </FlexRow>
       <IconMenu action={() => setShowMenu((current) => !current)} />
       <MenuPhone showMenu={showMenu} />
