@@ -17,22 +17,18 @@
 
 .scroll::-webkit-scrollbar{
     height: 1rem;
-    border-bottom: 1px solid black;
 }
 .scroll::-webkit-scrollbar-button{
-    background-color: rgb(0, 0, 0);
-}
-
-.scroll::-webkit-scrollbar-thumb{
-    background-color: rgb(37, 37, 37);
     height: 1rem;
+    background-color:  black;
 }
-.scroll::-webkit-scrollbar-thumb:hover{
-    background-color: rgb(85, 81, 81);
-    
+.scroll::-webkit-scrollbar-thumb{
+    height: 1rem;
+    background-color:  black;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 
 
-*::-webkit-scrollbar{
-  display: none;
-}
+
