@@ -32,7 +32,7 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
       <FlexRow className="w-2/5 hidden md:flex ">
         <Routes />
       </FlexRow>
-      <FlexRow className="w-1/5 relative">
+      <FlexRow className="w-[10%] relative">
         <input
           className="rounded-xl text-center text-black focus:outline-none min-w-[6rem]"
           placeholder="Busqueda"
@@ -45,9 +45,7 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
             key === "Enter" && setSearch(busqueda);
           }}
         />
-        <button onClick={() => (filterEqual ? clean() : setSearch(busqueda))}>
-          {filterEqual ? "Limpiar" : "Buscar"}
-        </button>
+        <button onClick={() => clean()}>Limpiar</button>
       </FlexRow>
       <IconMenu action={() => setShowMenu((current) => !current)} />
       <MenuPhone showMenu={showMenu} />

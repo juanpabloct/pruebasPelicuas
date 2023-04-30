@@ -26,7 +26,7 @@ export const ScrollMovies = ({ data, title, id }: ScrollMoviesProps) => {
             </p>
           )}
         </FlexRow>
-        <div className="flex w-full aspect-[10/3]  overflow-auto">
+        <div className="flex w-full aspect-[10/3]  overflow-auto scroll">
           {data.results.map((movie) => {
             return <Target pelicula={movie} key={movie.id} />;
           })}
