@@ -41,9 +41,7 @@ export const useConnectApi = <T,>({ url, recurso }: useConnectApiProps) => {
     }
   }, []);
   useEffect(() => {
-    return () => {
-      getData();
-    };
+    getData();
   }, [recurso, url]);
   return { data, state };
 };

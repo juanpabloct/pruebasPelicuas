@@ -13,9 +13,7 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
   const [busqueda, setBusqueda] = useState("");
   useEffect(() => {
-    return () => {
-      search !== busqueda && setBusqueda(search);
-    };
+    search !== busqueda && setBusqueda(search);
   }, [search]);
   const clean = () => {
     setSearch("");
