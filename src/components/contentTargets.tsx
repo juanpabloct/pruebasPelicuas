@@ -10,7 +10,6 @@ export const ContentTargets = ({
   data: StructureMovies;
   setSearch?: Dispatch<SetStateAction<string>>;
 }) => {
-  const totalPages = data.total_pages;
   return (
     <FlexCol>
       <FlexRow className="justify-center items-center mt-4">

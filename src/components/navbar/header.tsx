@@ -19,7 +19,6 @@ export const Header = ({ setSearch, search }: HeaderProps) => {
     setSearch("");
     setBusqueda("");
   };
-  const filterEqual = search.length > 0 && search === busqueda;
   return (
     <Navbar>
       <FlexRow className="text-[#ffdb9d] text-xl md:text-2xl xl:2xl w-1/5 items-center">
